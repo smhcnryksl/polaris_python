@@ -8,3 +8,5 @@ try:
     print(f"bölüm: {sayi_1/sayi_2:g}")
 except ZeroDivisionError:
     print("bir sayı 0 ile bölünemez")
+except ValueError:
+    print("Sadece sayılarla işlem yapılabilir.")
