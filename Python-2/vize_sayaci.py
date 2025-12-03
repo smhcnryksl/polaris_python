@@ -1,7 +1,7 @@
 import datetime
 
 
-tarih = input("Vizelerinizin tarihini GG/AA/YYYY formatında girin: ")
+tarih = input("Vizelerinizin tarihini GG.AA.YYYY formatında girin: ")
 zaman = input("Vizelerinizin saatini 12.00 formatında girin: ")
 
 gun, ay, yil = tarih.split(".")
@@ -26,3 +26,4 @@ kalan_saniye = kalan_saniye % 3600
 kalan_dakika = kalan_saniye // 60
 
 print(f"{kalan_gun} gün, {kalan_saat} saat ve {kalan_dakika} dakika sonra vizeleriniz başlıyor.")
+
