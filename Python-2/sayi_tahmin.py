@@ -1,7 +1,7 @@
 import random
 
 sayi = random.randint(1, 100)
-deneme = 0
+deneme = 1
 
 while True:
     girdi = int(input("1 ve 100 de dahil olmak üzere bu aralıkta bir sayı giriniz: "))
@@ -17,4 +17,5 @@ while True:
         print("Daha düşük")
         deneme += 1
         continue
+
 
