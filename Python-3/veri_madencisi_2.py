@@ -11,7 +11,6 @@ def tel_temizle(tel):
         iki = temiz[-2:]
         temiz = ilk + " " + iki
 
-    
     if len(temiz) == 13:
         return f"+90 {temiz}"
 
@@ -47,6 +46,3 @@ with open("lvl2_temiz_rehber.txt", "a") as f:
     for veri in veriler:
         if veri:
             f.write(f"{veri}\n")
-
-
-
