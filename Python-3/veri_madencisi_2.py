@@ -1,5 +1,6 @@
 import re
 
+veriler = []
 
 def tel_temizle(tel):
     temiz = re.sub("[^\d+]", " ", tel)
@@ -19,8 +20,6 @@ def tel_temizle(tel):
     else:
         return temiz
 
-
-veriler = []
 
 
 with open("lvl2_bozuk_veri.txt", encoding="utf-8") as file:
@@ -42,7 +41,7 @@ with open("lvl2_bozuk_veri.txt", encoding="utf-8") as file:
             veriler.append(m)
 
 
-with open("lvl2_temiz_rehber.txt", "a") as f:
+with open("lvl2_temiz_rehber.txt", "w") as f:
     for veri in veriler:
         if veri:
             f.write(f"{veri}\n")
