@@ -3,6 +3,7 @@ import re
 
 def tel_temizle(tel):
     temiz = re.sub("[^\d+]", " ", tel)
+    temiz = temiz.replace("  ", " ")
 
     if temiz[-3] != " ":
         ilk = temiz[:-2]
@@ -10,7 +11,7 @@ def tel_temizle(tel):
         temiz = ilk + " " + iki
 
     if temiz[0] == "0" and len(temiz) >= 10:
-        return f"+90 {temiz}"
+        return f"+90 {temiz[1:]}"
     else:
         return temiz
 
