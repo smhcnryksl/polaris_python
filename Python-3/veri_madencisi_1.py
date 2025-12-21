@@ -1,7 +1,23 @@
 import re
 
+
+def tel_temizle(tel):
+    temiz = re.sub("[^\d+]", " ", tel)
+
+    if temiz[-3] != " ":
+        ilk = temiz[:-2]
+        iki = temiz[-2:]
+        temiz = ilk + " " + iki
+
+    if temiz[0] == "0" and len(temiz) >= 10:
+        return f"+90 {temiz}"
+    else:
+        return temiz
+
+
 veriler = []
 veri = []
+
 
 with open("lvl1_bozuk_veri.txt", encoding="utf-8") as file:
 
@@ -11,9 +27,12 @@ with open("lvl1_bozuk_veri.txt", encoding="utf-8") as file:
     for line in file:
         mail = pattern_mail.findall(line)
         tel = pattern_tel.findall(line)
-        veri = tel + mail
-        veriler.extend(veri)
+        for t in tel:
+            telefon = tel_temizle(t)
+            veriler.append(telefon)
 
+        for m in mail:
+            veriler.append(m)
 
 
 with open("lvl1_temiz_rehber.txt", "a") as f:
