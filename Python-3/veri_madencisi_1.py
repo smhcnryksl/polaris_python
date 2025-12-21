@@ -36,7 +36,7 @@ with open("lvl1_bozuk_veri.txt", encoding="utf-8") as file:
             veriler.append(m)
 
 
-with open("lvl1_temiz_rehber.txt", "a") as f:
+with open("lvl1_temiz_rehber.txt", "w") as f:
     for veri in veriler:
         if veri:
             f.write(f"{veri}\n")
