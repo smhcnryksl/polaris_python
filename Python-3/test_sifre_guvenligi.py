@@ -1,12 +1,30 @@
 from sifre_güvenligi import validate
 
 
-def test_validate():
-    assert validate("Rakam_Koymadım") == "Güçsüz şifre! Şifreniz en az 1 büyük harf, 1 sayı, ve 1 özel karakter(- _ + # @ $ ! % * ? &) içermelidir."
-    assert validate("tumhepsi_kucuk1") == "Güçsüz şifre! Şifreniz en az 1 büyük harf, 1 sayı, ve 1 özel karakter(- _ + # @ $ ! % * ? &) içermelidir."
-    assert validate("busifredeozelyok1") == "Güçsüz şifre! Şifreniz en az 1 büyük harf, 1 sayı, ve 1 özel karakter(- _ + # @ $ ! % * ? &) içermelidir."
-    assert validate("bukisa") == "Güçsüz şifre! Şifreniz en az 1 büyük harf, 1 sayı, ve 1 özel karakter(- _ + # @ $ ! % * ? &) içermelidir."
-    assert validate("WakeUpNeo") == "Güçsüz şifre! Şifreniz en az 1 büyük harf, 1 sayı, ve 1 özel karakter(- _ + # @ $ ! % * ? &) içermelidir."
-    assert validate("   ") == "Eksik şifre"
-    assert validate("I_Love_CS50P") == "Şifre onaylandı"
-    assert validate("Stem_Has_No_Limits_2018") == "Şifre onaylandı"
+def test_buyuk_harf():
+    assert validate("tumhepsi_kucuk1") == False
+    assert validate("follow_the_white_ra66it") == False
+
+
+def test_kisa_sifre():
+    assert validate("Kisa*9") == False
+    assert validate("Budha_1") == False
+
+
+def test_whitespace():
+    assert validate("   ") == False
+    assert validate("") == False
+
+
+def test_sayi_kontrol():
+    assert validate("Rakam_Koymadım") == False
+    assert validate("+WakeUpNeo") == False
+
+
+def test_ozel_karakter_kontrolu():
+    assert validate("Busifredeozelyok1") == False
+
+
+def test_guclu_sifre():
+    assert validate("I_Love_CS50P") == True
+    assert validate("Stem_Has_No_Limits_2018") == True
