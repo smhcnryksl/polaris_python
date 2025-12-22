@@ -7,7 +7,8 @@ pattern_tel = re.compile(r"\+?\d{1,3} ?\(?\d{3}\)? \d{3} ?-?\d{2} ?\d{2}")
 veriler = []
 veri = []
 
-# Telefon numarassını standartlaştırma işlemi
+
+# Telefon numarasını standartlaştırma işlemi
 def tel_temizle(tel):
     temiz = re.sub("[^\d+]", " ", tel)
     temiz = temiz.replace("  ", " ")
