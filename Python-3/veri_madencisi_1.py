@@ -3,9 +3,7 @@ import re
 # Telefon numarası ve mail için pattern
 pattern_mail = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
 pattern_tel = re.compile(r"\+?\d{1,3} ?\(?\d{3}\)? \d{3} ?-?\d{2} ?\d{2}")
-
 veriler = []
-veri = []
 
 
 # Telefon numarasını standartlaştırma işlemi
